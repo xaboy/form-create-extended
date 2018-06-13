@@ -17,7 +17,7 @@
 </p>
 <br />
 
-### form-cretea组件开发文档
+## form-cretea组件开发文档
 
 #### 相关文件
 
@@ -213,6 +213,8 @@ vNode1 = render.cvm.make('input',render.props({
 //举例
 cascaderMake = makeFactory('cascader',['props','event','validate']);
 radioMake = makeFactory('radio',['options','props','event','validate']);
+//就可以使用maker快速生成
+//formCreate.maker.radio()
 ```
 
 
