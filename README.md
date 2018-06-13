@@ -19,7 +19,7 @@
 
 ## form-cretea组件开发文档
 
-#### 相关文件
+### 相关文件
 
 `src/components` 组件目录
 
@@ -31,7 +31,7 @@
 
 
 
-#### 组件的生成规则 Rule
+### 组件的生成规则 Rule
 
 `type` 组件的类型
 
@@ -51,7 +51,7 @@ Array: `validate` 验证规则
 
 
 
-#### 组件的构造
+### 组件的构造
 
 ```javascript
 import {handlerFactory} from "../factory/handler";
@@ -94,7 +94,7 @@ export {
 
 
 
-#### 组件处理器说明 handler
+### 组件处理器说明 handler
 
 >   可覆盖需要定制的方法,例如:handler.handle(),handler.getValue()
 
@@ -165,7 +165,7 @@ handler.el = handler.vm.$refs[handler.refName];
 
 
 
-#### 组件渲染器render
+### 组件渲染器render
 
 >   render.parse方法必须重写
 >
@@ -205,7 +205,8 @@ vNode1 = render.cvm.make('input',render.props({
 
 
 
-#### 组件生成器 make
+
+### 组件生成器 make
 
 >   用于使用 `formCreate.maker` 快速生成
 
@@ -219,7 +220,7 @@ radioMake = makeFactory('radio',['options','props','event','validate']);
 
 
 
-#### 内部Vue实例化对象 vm
+### 内部Vue实例化对象 vm
 
 属性
 
