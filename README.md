@@ -6,7 +6,7 @@
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
   <a href="https://github.com/xaboy">
-    <img src="https://img.shields.io/badge/author-xaboy-blue.svg" />
+    <img src="https://img.shields.io/badge/Author-xaboy-blue.svg" />
   </a>
   <a href="https://www.npmjs.com/package/form-create">
     <img src="https://badge.fury.io/js/form-create.svg" alt="version" />
@@ -70,10 +70,11 @@ const render = renderFactory({
     },
   	makeDiv(){
         return this.cvm('div',this.props
-                        .style('border','1px solid red')
-                        //这个key很重要
-                        .key('uniqueKey')
-                        .get())
+                            .style('border','1px solid red')
+                            //这个key很重要
+                            .key('uniqueKey')
+                            .get()
+                        );
     }
 })
 //组件生成器
@@ -83,6 +84,7 @@ const make = makeFactory('组件名称',[
 
 const component = {handler,render,make};
 
+//输出组件
 export default component;
 
 export {
@@ -119,12 +121,12 @@ export {
 
 方法
 
-**handler.verify() **组件首次初始化时触发,验证和初始化组件规则
+**handler.verify()**组件首次初始化时触发,验证和初始化组件规则
 
-**handler.handle()** 组件value发生变化时触发,用来处理value,将用户传入的值处理为组件可用的值
+**handler.handle()** 组件value发生变化时触发,用来处理value,将用户传入的值处理为组件可用的值`handler.parseValue`;
 
 ```javascript
-//default 无处理
+//default 无处理,直接复制给handler.parseValue
 handler.changeParseValue(handler.rule.value);
 ```
 
@@ -164,7 +166,7 @@ handler.el = handler.vm.$refs[handler.refName];
 
 
 
-####组件渲染器render
+#### 组件渲染器render
 
 >   render.parse方法必须重写
 >
@@ -176,7 +178,7 @@ handler.el = handler.vm.$refs[handler.refName];
 
 **render.options**  全局配置
 
-**render.vm **表单生成器Vue实例化对象
+**render.vm**表单生成器Vue实例化对象
 
 **render.props**  生成vNode属性的数据对象,[参考](https://cn.vuejs.org/v2/guide/render-function.html#深入-data-对象)
 
@@ -198,7 +200,7 @@ vNode1 = render.cvm.make('input',render.props({
 
 **render.init()**  组件首次初始化时触发,验证和初始化组件
 
-**render.parse() ** 组件渲染是出发,**该方法必须重写**
+**render.parse()** 组件渲染是出发,**该方法必须重写**
 
 **render.inputProps()** input类组件属性的数据对象
 
@@ -220,7 +222,7 @@ radioMake = makeFactory('radio',['options','props','event','validate']);
 
 属性
 
-**vm.formData ** 表单组件的键值对,对应`[handler.rule.field]=>handler.parseValue`
+**vm.formData** 表单组件的键值对,对应`[handler.rule.field]=>handler.parseValue`
 
 **vm.buttonProps** 提交按钮vNode属性的数据对象
 
@@ -228,7 +230,7 @@ radioMake = makeFactory('radio',['options','props','event','validate']);
 
 **vm.changeFormData(field,value)**  修改formData指定field字段的value
 
-**vm.removeFormData(field) ** 删除formData指定的field字段
+**vm.removeFormData(field)** 删除formData指定的field字段
 
 **vm.changeButtonProps(props)** 修改提交按钮vNode属性的数据对象
 
