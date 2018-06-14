@@ -112,7 +112,7 @@ export {
 
 **handler.unique** 组件唯一值
 
-**handler.parseValue**组件内部的值
+**handler.parseValue** 组件内部的值
 
 **handler.refName** 组件在`vm.$refs`的名称
 
@@ -120,7 +120,7 @@ export {
 
 方法
 
-**handler.verify()**组件首次初始化时触发,验证和初始化组件规则
+**handler.verify()** 组件首次初始化时触发,验证和初始化组件规则
 
 **handler.handle()** 组件value发生变化时触发,用来处理value,将用户传入的值处理为组件可用的值`handler.parseValue`;
 
@@ -136,6 +136,10 @@ handler.changeParseValue(handler.rule.value);
 **handler.getRule()**  获取组件rule
 
 **handler.getValue()**  获取组件最终输出的value值
+```javascript
+//default 无处理,直接输出parseValue
+    return handler.parseValue;
+```
 
 **handler.changeValue(value)**  修改value,并且重新处理value
 
@@ -177,7 +181,7 @@ handler.el = handler.vm.$refs[handler.refName];
 
 **render.options**  全局配置
 
-**render.vm**表单生成器Vue实例化对象
+**render.vm** 表单生成器Vue实例化对象
 
 **render.props**  生成vNode属性的数据对象,[参考](https://cn.vuejs.org/v2/guide/render-function.html#深入-data-对象)
 
